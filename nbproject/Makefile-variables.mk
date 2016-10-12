@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=homework_5
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/homework_5
+CND_ARTIFACT_NAME_Debug=github
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/github
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=homework5.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/homework5.tar
+CND_PACKAGE_NAME_Debug=github.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/github.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=homework_5
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/homework_5
+CND_ARTIFACT_NAME_Release=github
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/github
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=homework5.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/homework5.tar
+CND_PACKAGE_NAME_Release=github.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/github.tar
 #
 # include compiler specific variables
 #
