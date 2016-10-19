@@ -14,12 +14,19 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+#include "RobotParts.h"
+using namespace std;
+
 class controller {
 public:
     controller();
-private:
-
 };
+
+void createModel()
+{
+    std::cout << "createModel call";
+}
+
 
 #endif /* CONTROLLER_H */
 
