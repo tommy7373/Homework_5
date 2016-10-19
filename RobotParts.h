@@ -20,28 +20,29 @@
 class RobotPart {
 protected:
     std::string Name;
-    int modelNumber;
     std::string Type;
     double Weight;
     double Cost;
     std::string Description;
 public:
     RobotPart();
-    virtual void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    virtual void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
+    int modelNumber;
+    
 };
 
 class Head : public RobotPart
 {
 public:
     Head();
-    void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
 };
 
 class Locomotor : public RobotPart
 {
 public:
     Locomotor();
-    void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
 };
 
 class Battery : public RobotPart
@@ -50,7 +51,7 @@ public:
     Battery();
     double Energy;
     double maxPower;
-    void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
     void setBatteryInfo(double energy, double power);
 };
 
@@ -59,7 +60,7 @@ class Arm : public RobotPart
 public:
     Arm();
     void setPowerConsumed(int power);
-    void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
     int powerConsumed;
 };
 
@@ -68,11 +69,8 @@ class Torso : public RobotPart
 public:
     Torso();
     int batteryCompartments;
-    Head head;
-    Locomotor locomotor;
-    std::vector<Arm> arms;
-    std::vector<Battery> batteries;
-    void SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc);
+    void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
+    void setBatteryCompartments(int batteries);
 };
 
 #endif /* ROBOTPARTS_H */
