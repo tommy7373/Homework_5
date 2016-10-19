@@ -16,17 +16,16 @@
 
 RobotPart::RobotPart() {
 }
-void RobotPart::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
-    std::cout << "Part created!\n";
+void RobotPart::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
 
 Head::Head(){
     Type="Head";
 }
-void Head::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
+void Head::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Head created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
@@ -34,8 +33,8 @@ void Head::SetInfo(std::string name, int modnum, std::string type, double weight
 Locomotor::Locomotor(){
     Type="Locomotor";
 }
-void Locomotor::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
+void Locomotor::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Locomotor created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
@@ -43,17 +42,20 @@ void Locomotor::SetInfo(std::string name, int modnum, std::string type, double w
 Torso::Torso(){
     Type="Torso";
 }
-void Torso::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
+void Torso::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Torso created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
+}
+void Torso::setBatteryCompartments(int batteries){
+    batteryCompartments=batteries;
 }
 
 Arm::Arm(){
     Type="Arm";
 }
-void Arm::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
+void Arm::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Arm created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
@@ -64,8 +66,8 @@ void Arm::setPowerConsumed(int power){
 Battery::Battery(){
     Type="Battery";
 }
-void Battery::SetInfo(std::string name, int modnum, std::string type, double weight, double cost, std::string desc){
-    Name=name; modelNumber=modnum; Type=type; Weight=weight; Cost=cost; Description=desc;
+void Battery::SetInfo(std::string name, int modnum, double weight, double cost, std::string desc){
+    Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Battery created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
