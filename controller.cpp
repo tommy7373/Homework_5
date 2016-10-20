@@ -284,7 +284,6 @@ controller::controller() {
             }
             cout << "Your order of " << modelcount << " models ";
             cout << "comes to $" << cost << " in total.\n";
-            cout << "";
             }
             break;
         }
