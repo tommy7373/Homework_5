@@ -22,11 +22,6 @@ public:
     controller();
 };
 
-void createModel()
-{
-    std::cout << "createModel call";
-}
-
 
 #endif /* CONTROLLER_H */
 

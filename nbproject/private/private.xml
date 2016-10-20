@@ -6,6 +6,12 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/thomas/NetBeansProjects/Homework_5_GitHub/controller.cpp</file>
+            <file>file:/home/thomas/NetBeansProjects/Homework_5_GitHub/controller.h</file>
+            <file>file:/home/thomas/NetBeansProjects/Homework_5_GitHub/RobotParts.cpp</file>
+            <file>file:/home/thomas/NetBeansProjects/Homework_5_GitHub/RobotParts.h</file>
+            <file>file:/home/thomas/NetBeansProjects/Homework_5_GitHub/main.cpp</file>
+        </group>
     </open-files>
 </project-private>

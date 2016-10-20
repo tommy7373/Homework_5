@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>RobotModel.h</itemPath>
       <itemPath>RobotParts.h</itemPath>
       <itemPath>controller.h</itemPath>
     </logicalFolder>
@@ -14,6 +15,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>RobotModel.cpp</itemPath>
       <itemPath>RobotParts.cpp</itemPath>
       <itemPath>controller.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -40,6 +42,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="RobotModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RobotModel.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="RobotParts.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RobotParts.h" ex="false" tool="3" flavor2="0">
@@ -71,6 +77,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="RobotModel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RobotModel.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="RobotParts.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RobotParts.h" ex="false" tool="3" flavor2="0">

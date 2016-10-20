@@ -29,6 +29,9 @@ void Head::SetInfo(std::string name, int modnum, double weight, double cost, std
     std::cout << "Head created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
+void Head::PrintInfo(){
+    std::cout << Type << "\t" << modelNumber << "\t" << Name << "\t" << Weight << '\t' << Cost;
+}
 
 Locomotor::Locomotor(){
     Type="Locomotor";
@@ -37,6 +40,12 @@ void Locomotor::SetInfo(std::string name, int modnum, double weight, double cost
     Name=name; modelNumber=modnum; Weight=weight; Cost=cost; Description=desc;
     std::cout << "Locomotor created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
+}
+void Locomotor::setLocomotorInfo(double speed){
+    Speed=speed;
+}
+void Locomotor::PrintInfo(){
+    std::cout << Type << "\t" << modelNumber << "\t" << Name << "\t" << Weight << '\t' << Cost << "\t Speed: "<< Speed;
 }
 
 Torso::Torso(){
@@ -50,6 +59,9 @@ void Torso::SetInfo(std::string name, int modnum, double weight, double cost, st
 void Torso::setBatteryCompartments(int batteries){
     batteryCompartments=batteries;
 }
+void Torso::PrintInfo(){
+    std::cout << Type << "\t" << modelNumber << "\t" << Name << "\t" << Weight << '\t' << Cost << "\t Compartments: " << batteryCompartments;
+}
 
 Arm::Arm(){
     Type="Arm";
@@ -62,6 +74,9 @@ void Arm::SetInfo(std::string name, int modnum, double weight, double cost, std:
 void Arm::setPowerConsumed(int power){
     powerConsumed=power;
 }
+void Arm::PrintInfo(){
+    std::cout << Type << "\t" << modelNumber << "\t" << Name << "\t" << Weight << '\t' << Cost << "\t Power: " << powerConsumed;
+}
 
 Battery::Battery(){
     Type="Battery";
@@ -71,7 +86,9 @@ void Battery::SetInfo(std::string name, int modnum, double weight, double cost, 
     std::cout << "Battery created!\n";
     std::cout << Name << '\n' << modelNumber << '\n' << Type << '\n' << Weight << '\n' << Cost << '\n' << Description;
 }
-void Battery::setBatteryInfo(double energy, double power){
-    Energy=power; maxPower=power;
+void Battery::setBatteryInfo(double energy){
+    Energy=energy;
 }
-
+void Battery::PrintInfo(){
+    std::cout << Type << "\t" << modelNumber << "\t" << Name << "\t" << Weight << '\t' << Cost << "\t Capacity: "<< Energy;
+}

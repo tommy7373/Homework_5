@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=GitHub
+PROJECTNAME=Homework_5_GitHub
 
 # Active Configuration
 DEFAULTCONF=Debug

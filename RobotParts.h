@@ -18,13 +18,12 @@
 #include <vector>
 
 class RobotPart {
-protected:
+public:
     std::string Name;
     std::string Type;
     double Weight;
     double Cost;
     std::string Description;
-public:
     RobotPart();
     virtual void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
     int modelNumber;
@@ -36,13 +35,17 @@ class Head : public RobotPart
 public:
     Head();
     void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
+    void PrintInfo();
 };
 
 class Locomotor : public RobotPart
 {
 public:
     Locomotor();
+    double Speed;
     void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
+    void setLocomotorInfo(double speed);
+    void PrintInfo();
 };
 
 class Battery : public RobotPart
@@ -50,9 +53,9 @@ class Battery : public RobotPart
 public:
     Battery();
     double Energy;
-    double maxPower;
     void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
-    void setBatteryInfo(double energy, double power);
+    void setBatteryInfo(double energy);
+    void PrintInfo();
 };
 
 class Arm : public RobotPart
@@ -62,6 +65,7 @@ public:
     void setPowerConsumed(int power);
     void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
     int powerConsumed;
+    void PrintInfo();
 };
 
 class Torso : public RobotPart
@@ -71,6 +75,7 @@ public:
     int batteryCompartments;
     void SetInfo(std::string name, int modnum, double weight, double cost, std::string desc);
     void setBatteryCompartments(int batteries);
+    void PrintInfo();
 };
 
 #endif /* ROBOTPARTS_H */
