@@ -174,7 +174,7 @@ controller::controller() {
                         }
                         cout << "Selection: ";
                         cin >> selection;
-                        newModel.batteries.push_back(selection);
+                        newModel.batteries.push_back(selection-1);
                     }
                     cout << "Which of the following heads would you like?:\n";
                     cout << "Head\tModel#\tName\tWeight\tCost\tOther info\n";
@@ -188,7 +188,7 @@ controller::controller() {
                     cout << "Which of the following locomotors would you like?:\n";
                     cout << "Locomotor\tModel#\tName\tWeight\tCost\tOther info\n";
                     for(int i=0;i<headV.size();i++){
-                        headV[i].PrintInfo();
+                        locomotorV[i].PrintInfo();
                         cout << '\n';
                     }
                     cout << "Enter the model number of the locomotor you would like: ";
@@ -205,7 +205,7 @@ controller::controller() {
                         }
                     cout << "Selection: ";
                     cin >> selection;
-                    newModel.batteries.push_back(selection);
+                    newModel.batteries.push_back(selection-1);
                     }
                 }
             }
@@ -220,10 +220,10 @@ controller::controller() {
                         headV[robotmodels[i].head].PrintInfo();  
                         torsoV[robotmodels[i].torso].PrintInfo();
                         for(int j=0;j<robotmodels[i].batteries.size();j++){
-                            batteryV[robotmodels[i].batteries[j]];
+                            batteryV[robotmodels[i].batteries[j]].PrintInfo();
                         }
                         for(int j=0;j<robotmodels[i].arms.size();j++){
-                            armV[robotmodels[i].batteries[j]];
+                            armV[robotmodels[i].batteries[j]].PrintInfo();
                         }
                         locomotorV[robotmodels[i].locomotor].PrintInfo();
                     }
@@ -232,19 +232,60 @@ controller::controller() {
             }
             break;
         case 3:{
+            int selection;
+            int modelcount;
+            string exitanswer;
+            double cost,localcost;
+            bool adding=1;
             cout << "Order creation\n--------------\nHere is a list of our current models: \n\n";
-                for(int i=0;i<robotmodels.size();i++){ //for all models
+            while(adding){
+                for(int i=0;i<robotmodels.size();i++){ //list for all models
+                    localcost=0;
                     cout << "Model " << i+1 << ",\n";
                     headV[robotmodels[i].head].PrintInfo();  
                     torsoV[robotmodels[i].torso].PrintInfo();
                     for(int j=0;j<robotmodels[i].batteries.size();j++){
-                        batteryV[robotmodels[i].batteries[j]];
+                        batteryV[robotmodels[i].batteries[j]].PrintInfo();
                     }
                     for(int j=0;j<robotmodels[i].arms.size();j++){
-                        armV[robotmodels[i].batteries[j]];
+                        armV[robotmodels[i].batteries[j]].PrintInfo();
                     }
                     locomotorV[robotmodels[i].locomotor].PrintInfo();
+                    localcost = localcost+torsoV[robotmodels[i].torso].Cost;
+                    localcost = localcost+headV[robotmodels[i].head].Cost;
+                    localcost = localcost+locomotorV[robotmodels[i].locomotor].Cost;
+                    for(int j=0;j<robotmodels[i].arms.size();j++){
+                        localcost = localcost+armV[robotmodels[i].arms[j]].Cost;
+                    }
+                    for(int j=0;j<robotmodels[i].batteries.size();j++){
+                        localcost = localcost+batteryV[robotmodels[i].batteries[j]].Cost;
+                    }
+                    cout << "\n This model costs $" << localcost << "\n";
                 }
+            cout << "Choose a model to add to your order: ";
+            cin >> selection;
+            selection--;
+            cost = cost+torsoV[robotmodels[selection].torso].Cost;
+            cost = cost+headV[robotmodels[selection].head].Cost;
+            cost = cost+locomotorV[robotmodels[selection].locomotor].Cost;
+            for(int i=0;i<robotmodels[selection].arms.size();i++){
+                cost = cost+armV[robotmodels[selection].arms[i]].Cost;
+            }
+            for(int i=0;i<robotmodels[selection].batteries.size();i++){
+                cost = cost+batteryV[robotmodels[selection].batteries[i]].Cost;
+            }
+            modelcount++;
+            cout << "\nWould you like to keep adding models to your order? y/n";
+            cin >> exitanswer;
+            if(exitanswer=="y"){
+                adding=0;
+            }else if(exitanswer=="n"){
+                adding=1;
+            }
+            cout << "Your order of " << modelcount << " models ";
+            cout << "comes to $" << cost << " in total.\n";
+            cout << "";
+            }
             break;
         }
         case 4:
